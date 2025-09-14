@@ -1,0 +1,103 @@
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-13T06:01:58.520Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-13T06:01:58.522Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-13T06:02:00.744Z"}
+{"level":"info","message":"SIGINT signal received","service":"floatchat-backend","timestamp":"2025-09-13T06:02:32.093Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-13T06:03:35.342Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-13T06:03:35.346Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-13T06:03:38.620Z"}
+{"level":"info","message":"SIGINT signal received","service":"floatchat-backend","timestamp":"2025-09-13T06:03:56.837Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-13T07:02:37.909Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-13T07:02:37.912Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-13T07:02:42.091Z"}
+{"level":"info","message":"SIGINT signal received","service":"floatchat-backend","timestamp":"2025-09-13T07:03:03.546Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-13T11:46:34.986Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-13T11:46:34.993Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-13T11:46:39.150Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-13T11:46:41.318Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-13T11:46:41.324Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-13T11:46:42.045Z"}
+{"level":"info","message":"SIGINT signal received","service":"floatchat-backend","timestamp":"2025-09-13T11:46:47.080Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-13T12:03:38.075Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-13T12:03:38.086Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-13T12:03:42.282Z"}
+{"level":"info","message":"SIGINT signal received","service":"floatchat-backend","timestamp":"2025-09-13T12:05:11.797Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:00:33.829Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:00:33.832Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:00:36.767Z"}
+{"_message":"User validation failed","errors":{"firstName":{"kind":"required","message":"Path `firstName` is required.","name":"ValidatorError","path":"firstName","properties":{"message":"Path `firstName` is required.","path":"firstName","type":"required"}},"lastName":{"kind":"required","message":"Path `lastName` is required.","name":"ValidatorError","path":"lastName","properties":{"message":"Path `lastName` is required.","path":"lastName","type":"required"}}},"level":"error","message":"Registration error: User validation failed: lastName: Path `lastName` is required., firstName: Path `firstName` is required.","service":"floatchat-backend","stack":"ValidationError: User validation failed: lastName: Path `lastName` is required., firstName: Path `firstName` is required.\n    at Document.invalidate (C:\\Users\\SeginusAlpha\\Desktop\\INFINITY CASTLE\\floatchat-backend\\node_modules\\mongoose\\lib\\document.js:3219:32)\n    at C:\\Users\\SeginusAlpha\\Desktop\\INFINITY CASTLE\\floatchat-backend\\node_modules\\mongoose\\lib\\document.js:3012:17\n    at C:\\Users\\SeginusAlpha\\Desktop\\INFINITY CASTLE\\floatchat-backend\\node_modules\\mongoose\\lib\\schematype.js:1368:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-09-14T19:03:32.413Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:03:32 +0000] \"POST /api/auth/register HTTP/1.1\" 400 132 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:03:32.416Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:04:04.793Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:04:04.797Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:04:07.738Z"}
+{"level":"info","message":"New user registered: test12@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:04:35.166Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:04:35 +0000] \"POST /api/auth/register HTTP/1.1\" 201 165 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:04:35.169Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:09:12.257Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:09:12.261Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:09:13.183Z"}
+{"level":"error","message":"Registration error: User already exists with this email","service":"floatchat-backend","stack":"Error: User already exists with this email\n    at AuthService.register (C:\\Users\\SeginusAlpha\\Desktop\\INFINITY CASTLE\\floatchat-backend\\src\\services\\authService.js:11:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async register (C:\\Users\\SeginusAlpha\\Desktop\\INFINITY CASTLE\\floatchat-backend\\src\\controllers\\authController.js:17:22)","timestamp":"2025-09-14T19:10:17.116Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:10:17 +0000] \"POST /api/auth/register HTTP/1.1\" 400 63 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:10:17.120Z"}
+{"level":"info","message":"New user registered: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:10:23.362Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:10:23 +0000] \"POST /api/auth/register HTTP/1.1\" 201 166 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:10:23.364Z"}
+{"level":"info","message":"SIGINT signal received","service":"floatchat-backend","timestamp":"2025-09-14T19:10:43.512Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:10:46.360Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:10:46.364Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:10:48.031Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:14:14.827Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:14:14 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:14:14.830Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:22:26.551Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:22:26.554Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:22:27.351Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:23:35.360Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:23:35 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:23:35.363Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:26:06.469Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:26:06 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:26:06.471Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.190Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:26:09 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.191Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.450Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:26:09 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.451Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.652Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:26:09 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.653Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.838Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:26:09 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:26:09.839Z"}
+{"level":"info","message":"User logged in: test1@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:27:06.602Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:27:06 +0000] \"POST /api/auth/login HTTP/1.1\" 200 152 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:27:06.604Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:27:16.223Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:27:16 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:27:16.223Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:27:24 +0000] \"POST /api/auth/logout HTTP/1.1\" 500 83 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:27:24.955Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:27:54.972Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:27:54.976Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:27:55.947Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:27:55.950Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:27:59.854Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:28:27.112Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:28:27.115Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:28:27.755Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:28:33 +0000] \"POST /api/auth/logout HTTP/1.1\" 200 46 \"-\" \"PostmanRuntime/7.46.0\"","service":"floatchat-backend","timestamp":"2025-09-14T19:28:33.649Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:28:38.144Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:28:38 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:28:38.146Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:28:38.574Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:28:38 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:28:38.575Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:28:57.967Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:28:57 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:28:57.969Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:29:00.209Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:29:00 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:29:00.210Z"}
+{"level":"warn","message":"404 - Route not found: POST /api/logout","service":"floatchat-backend","timestamp":"2025-09-14T19:29:00.516Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:29:00 +0000] \"POST /api/logout HTTP/1.1\" 404 80 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:29:00.517Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:29:30.944Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:29:30 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:29:30.945Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:29:33 +0000] \"POST /api/auth/logout HTTP/1.1\" 200 46 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:29:33.373Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:31:17.294Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:31:17.297Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:31:20.221Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:33:32.528Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:33:32 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:33:32.532Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:33:35 +0000] \"POST /api/auth/logout HTTP/1.1\" 200 46 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:33:35.190Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:34:30.403Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:34:30 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:34:30.405Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:34:32 +0000] \"POST /api/auth/logout HTTP/1.1\" 200 46 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:34:32.983Z"}
+{"level":"info","message":"User logged in: test123@example.com","service":"floatchat-backend","timestamp":"2025-09-14T19:35:16.050Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:35:16 +0000] \"POST /api/auth/login HTTP/1.1\" 200 154 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:35:16.051Z"}
+{"level":"info","message":"::1 - - [14/Sep/2025:19:35:18 +0000] \"POST /api/auth/logout HTTP/1.1\" 200 46 \"http://localhost:5000/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\"","service":"floatchat-backend","timestamp":"2025-09-14T19:35:18.326Z"}
+{"level":"info","message":"FloatChat Backend Server running on port 3000","service":"floatchat-backend","timestamp":"2025-09-14T19:35:24.178Z"}
+{"level":"info","message":"Environment: development","service":"floatchat-backend","timestamp":"2025-09-14T19:35:24.181Z"}
+{"level":"info","message":"MongoDB Connected: ac-e7ldeur-shard-00-00.zwhg8bs.mongodb.net:27017/floatchat","service":"floatchat-backend","timestamp":"2025-09-14T19:35:25.108Z"}
