@@ -52,7 +52,7 @@ app.use(rateLimit);
 
 // API routes
 app.use('/api/auth', authRoutes);
-
+app.use('/api/chat', require('./src/routes/chatRoutes'));
 
 // Catch 404 and forward to error handler
 app.use('*', (req, res) => {

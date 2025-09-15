@@ -5,7 +5,7 @@ const chatController = require('../controllers/chatController');
 const { body } = require('express-validator');
 
 // Chat with RAG-LLM service
-router.post('/message', 
+router.post('/send', 
   [
     body('question').notEmpty().withMessage('Question is required'),
     body('sessionId').optional().isString(),
@@ -24,9 +24,9 @@ router.post('/simulate',
 );
 
 // Chat history
-router.get('/history',
-  chatController.getChatHistory
-);
+// router.get('/history',
+//   chatController.getChatHistory
+// );
 
 module.exports = router;
 
