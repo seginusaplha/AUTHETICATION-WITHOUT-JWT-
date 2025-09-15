@@ -19,7 +19,7 @@ const validation = {
     body('FullName')
       .trim()
       .notEmpty()
-      .withMessage('First name is required')
+      .withMessage('First Name is required')
 
   ],
 
@@ -33,20 +33,19 @@ const validation = {
       .notEmpty()
       .withMessage('Password is required')
   ],
-
-  // Chat Message Validation
-  chatMessage: [
-    body('question')
-      .trim()
-      .notEmpty()
-      .withMessage('Question is required'),
-    body('sessionId')
-      .optional()
-      .isString()
-      .withMessage('Session ID must be a string')
-      .isLength({ max: 100 })
-      .withMessage('Session ID max length is 100 characters')
-  ],
+// ✅ Chat Message Validation
+ chatMessage:[
+  body("message")
+    .trim()
+    .notEmpty()
+    .withMessage("Message is required"),
+  body("sessionId")
+    .optional()
+    .isString()
+    .withMessage("Session ID must be a string")
+    .isLength({ max: 100 })
+    .withMessage("Session ID max length is 100 characters"),
+],
 
   // User Profile Update Validation
   updateProfile: [

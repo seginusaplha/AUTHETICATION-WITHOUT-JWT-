@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import axios, { AxiosError } from "axios";
 import Navbar from "@/components/Navbar";
 import ChatBubble from "@/components/ChatBubble";
 import MessageInput from "@/components/MessageInput";
@@ -7,9 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { History, Trash2, Plus, MessageCircle } from "lucide-react";
-import { chatApi } from "@/utils/chatApi"; // ✅ backend API
 import { useToast } from "@/hooks/use-toast";
-
 interface Message {
   id: string;
   content: string;
@@ -23,6 +22,8 @@ interface ChatSession {
   lastMessage: string;
   timestamp: string;
 }
+
+const API_URL = "http://localhost:3000/api/chat";
 
 const ChatPage = () => {
   const { toast } = useToast();
@@ -43,7 +44,6 @@ const ChatPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -51,15 +51,6 @@ const ChatPage = () => {
     scrollToBottom();
   }, [messages]);
 
-  // ✅ Fetch chat history when page loads
-  useEffect(() => {
-    (async () => {
-      const res = await chatApi.getHistory();
-      if (res.success) {
-        setChatSessions(res.data.sessions || []);
-      }
-    })();
-  }, []);
 
   const handleSendMessage = async (content: string) => {
     const userMessage: Message = {
@@ -68,90 +59,71 @@ const ChatPage = () => {
       isUser: true,
       timestamp: new Date().toLocaleTimeString(),
     };
-
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
 
     try {
-      const response = await chatApi.sendMessage(content, currentSessionId);
+      const res = await axios.post(
+        `${API_URL}/send`,
+        { message: content, sessionId: currentSessionId },
+        { withCredentials: true }
+      );
 
-      if (response.success && response.data) {
-        // Assign session ID if new
-        if (!currentSessionId && response.data.sessionId) {
-          setCurrentSessionId(response.data.sessionId);
-        }
+      if (res.data.success) {
+        if (!currentSessionId && res.data.sessionId) setCurrentSessionId(res.data.sessionId);
 
-        const aiResponse: Message = {
+        const aiMessage: Message = {
           id: (Date.now() + 1).toString(),
-          content: response.data.response,
+          content: res.data.answer || "No response",
           isUser: false,
           timestamp: new Date().toLocaleTimeString(),
         };
+        setMessages((prev) => [...prev, aiMessage]);
 
-        setMessages((prev) => [...prev, aiResponse]);
-
-        // Update chat history sidebar
         setChatSessions((prev) => {
           const updated = [
             {
-              id: response.data.sessionId,
-              title: response.data.title || "New Chat",
-              lastMessage: content,
+              id: res.data.sessionId || "default",
+              title: content.slice(0, 20) || "New Chat",
+              lastMessage: res.data.answer || "",
               timestamp: new Date().toLocaleTimeString(),
             },
-            ...prev.filter((s) => s.id !== response.data.sessionId),
+            ...prev.filter((s) => s.id !== res.data.sessionId),
           ];
           return updated;
         });
-      } else {
-        throw new Error(response.error || "Failed to send message");
-      }
-    } catch (error) {
-      console.error("Chat API error:", error);
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-      });
-
-      // Fallback error message in chat
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        content:
-          "Sorry, I'm having trouble connecting right now. Please try again later.",
+      } else throw new Error(res.data.error || "Failed to send message");
+    } catch (err) {
+      toast({ variant: "destructive", title: "Error", description: "Failed to send message" });
+      const errorMsg: Message = {
+        id: (Date.now() + 2).toString(),
+        content: "Sorry, I'm having trouble connecting right now.",
         isUser: false,
         timestamp: new Date().toLocaleTimeString(),
       };
-      setMessages((prev) => [...prev, errorMessage]);
+      setMessages((prev) => [...prev, errorMsg]);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleDeleteSession = async (sessionId: string) => {
-    const res = await chatApi.deleteSession(sessionId);
-    if (res.success) {
-      setChatSessions((prev) => prev.filter((s) => s.id !== sessionId));
-      toast({
-        title: "Chat deleted",
-        description: "The session has been removed successfully.",
-      });
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: res.error,
-      });
+    try {
+      const res = await axios.delete(`${API_URL}/${sessionId}`, { withCredentials: true });
+      if (res.data.success) {
+        setChatSessions((prev) => prev.filter((s) => s.id !== sessionId));
+        toast({ title: "Chat deleted", description: "Session removed" });
+      }
+    } catch (err) {
+      toast({ variant: "destructive", title: "Error", description: "Failed to delete session" });
     }
   };
-
   return (
     <div className="min-h-screen flex flex-col relative">
       <ParticleBackground />
       <Navbar />
-
       <div className="flex-1 flex relative z-10">
-        {/* Chat History Sidebar */}
+        {/* Sidebar */}
         <div className="w-80 glass border-r border-accent/20 hidden lg:flex flex-col">
           <div className="p-4 border-b border-accent/20">
             <Button
@@ -166,14 +138,12 @@ const ChatPage = () => {
               New Chat
             </Button>
           </div>
-
           <ScrollArea className="flex-1">
             <div className="p-4 space-y-2">
               <h3 className="text-sm font-medium text-muted-foreground flex items-center">
                 <History className="w-4 h-4 mr-2" />
                 Chat History
               </h3>
-
               {chatSessions.map((session) => (
                 <Card
                   key={session.id}
@@ -212,9 +182,9 @@ const ChatPage = () => {
           </ScrollArea>
         </div>
 
-        {/* Main Chat Area */}
+        {/* Chat Area */}
         <div className="flex-1 flex flex-col">
-          {/* Chat Header */}
+          {/* Header */}
           <div className="p-4 glass border-b border-accent/20">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
@@ -231,7 +201,7 @@ const ChatPage = () => {
             </div>
           </div>
 
-          {/* Messages Area */}
+          {/* Messages */}
           <ScrollArea className="flex-1 p-4">
             <div className="max-w-4xl mx-auto space-y-4">
               {messages.map((message) => (
@@ -242,7 +212,6 @@ const ChatPage = () => {
                   timestamp={message.timestamp}
                 />
               ))}
-
               {isLoading && (
                 <ChatBubble
                   message="Analyzing ocean data..."
@@ -250,12 +219,11 @@ const ChatPage = () => {
                   timestamp={new Date().toLocaleTimeString()}
                 />
               )}
-
               <div ref={messagesEndRef} />
             </div>
           </ScrollArea>
 
-          {/* Message Input */}
+          {/* Input */}
           <MessageInput onSendMessage={handleSendMessage} disabled={isLoading} />
         </div>
       </div>

@@ -3,17 +3,10 @@ const express = require('express');
 const router = express.Router();
 const chatController = require('../controllers/chatController');
 const { body } = require('express-validator');
+const validation = require("../middleware/validation");
 
 // Chat with RAG-LLM service
-router.post('/message', 
-  [
-    body('question').notEmpty().withMessage('Question is required'),
-    body('sessionId').optional().isString(),
-    body('userId').optional().isString()
-  ],
-  chatController.sendMessage
-);
-
+router.post("/send", validation.chatMessage, chatController.sendMessage);
 // Chain simulation
 router.post('/simulate',
   [
@@ -23,10 +16,6 @@ router.post('/simulate',
   chatController.simulateChain
 );
 
-// Chat history
-router.get('/history',
-  chatController.getChatHistory
-);
 
 module.exports = router;
 

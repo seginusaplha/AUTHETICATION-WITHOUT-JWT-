@@ -1,8 +1,6 @@
-
-const ragLlmService = require('../services/ragLlmService');
-const ChatSession = require('../models/ChatSession');
-const { validationResult } = require('express-validator');
-
+const ragLlmService = require("../services/ragLlmService");
+const ChatSession = require("../models/ChatSession");
+const { validationResult } = require("express-validator");
 class ChatController {
   async sendMessage(req, res) {
     try {
@@ -10,16 +8,16 @@ class ChatController {
       if (!errors.isEmpty()) {
         return res.status(400).json({
           success: false,
-          error: 'Validation failed',
-          details: errors.array()
+          error: "Validation failed",
+          details: errors.array(),
         });
       }
 
-      const { question, sessionId = 'default' } = req.body;
+      const { message, sessionId = "default" } = req.body;
       const userId = req.user.userId;
 
       // Call Python RAG-LLM service
-      const ragResponse = await ragLlmService.askQuestion(question, userId);
+      const ragResponse = await ragLlmService.askQuestion(message, userId);
 
       // Save chat session to MongoDB
       await ChatSession.findOneAndUpdate(
@@ -28,19 +26,19 @@ class ChatController {
           $push: {
             messages: [
               {
-                role: 'user',
-                content: question,
-                timestamp: new Date()
+                role: "user",
+                content: message,
+                timestamp: new Date(),
               },
               {
-                role: 'assistant', 
+                role: "assistant",
                 content: ragResponse.answer,
                 timestamp: new Date(),
                 sources: ragResponse.sources,
-                data_points: ragResponse.data_points
-              }
-            ]
-          }
+                data_points: ragResponse.data_points,
+              },
+            ],
+          },
         },
         { upsert: true, new: true }
       );
@@ -50,25 +48,24 @@ class ChatController {
         answer: ragResponse.answer,
         sources: ragResponse.sources,
         data_points: ragResponse.data_points,
-        sessionId
+        sessionId,
       });
-
     } catch (error) {
       res.status(500).json({
         success: false,
-        error: error.message
+        error: error.message,
       });
     }
   }
-
+  // ✅ Simulate Chain
   async simulateChain(req, res) {
     try {
       const { query } = req.body;
-      
+
       if (!query) {
         return res.status(400).json({
           success: false,
-          error: 'Query is required'
+          error: "Query is required",
         });
       }
 
@@ -76,38 +73,12 @@ class ChatController {
 
       res.json({
         success: true,
-        result: result.result
+        result: result.result,
       });
-
     } catch (error) {
       res.status(500).json({
         success: false,
-        error: error.message
-      });
-    }
-  }
-
-  async getChatHistory(req, res) {
-    try {
-      const userId = req.user.userId;
-      const { sessionId, limit = 50 } = req.query;
-
-      const query = { userId };
-      if (sessionId) query.sessionId = sessionId;
-
-      const sessions = await ChatSession.find(query)
-        .sort({ updatedAt: -1 })
-        .limit(parseInt(limit));
-
-      res.json({
-        success: true,
-        sessions
-      });
-
-    } catch (error) {
-      res.status(500).json({
-        success: false,
-        error: error.message
+        error: error.message || "Internal server error",
       });
     }
   }
