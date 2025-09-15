@@ -33,6 +33,7 @@ def simulate_chain():
         return jsonify({"error": "No query provided"}), 400
 
     result = ask_chain_simulator(query)
+    print(result)
     return jsonify({"result": result})
 
 PROMPT_TEMPLATE = """

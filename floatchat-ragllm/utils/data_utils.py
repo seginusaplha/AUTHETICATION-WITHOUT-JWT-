@@ -28,7 +28,7 @@ def load_argo_data():
     return df, docs
 
 
-def load_papers(pdf_folder="backend/data/papers"):
+def load_papers(pdf_folder="data/papers"):
     """Load and split research papers."""
     print("Loading research papers...")
     all_docs = []
